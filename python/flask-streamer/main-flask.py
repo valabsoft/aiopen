@@ -18,12 +18,16 @@ def gen_frames():
         if not success:
             break
         else:
+            cv2.imshow('web-cam capture', frame)
             # Кодируем изображение
             ret, buffer = cv2.imencode('.jpg', frame)
             # Преобразуем в массив байт
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # concat frame one by one and show result
+            if cv2.waitKey(1) == 27:
+                break
+    cv2.destroyAllWindows()
 
 
 # Задаем маршрут, по которому пойдет чистый видеопоток
