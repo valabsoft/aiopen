@@ -2,3 +2,5 @@ qt/build-flask-receiver-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/
 qt/flask-receiver/.qtc_clangd/
 qt/flask-receiver/debug/
 qt/flask-receiver/release/
+qt/gui/.qtc_clangd/
+qt/gui/debug/

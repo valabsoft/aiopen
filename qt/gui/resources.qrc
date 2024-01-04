@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>png/sevsu.png</file>
+        <file>png/arrow-down.png</file>
+        <file>png/arrow-up.png</file>
+        <file>png/bt-info.png</file>
+        <file>png/bt-settings.png</file>
+        <file>png/bt-report.png</file>
+        <file>png/bacteria-icon.png</file>
+        <file>png/ai-icon.png</file>
+        <file>png/water-icon.png</file>
+        <file>png/chemistry-icon.png</file>
+    </qresource>
+</RCC>
