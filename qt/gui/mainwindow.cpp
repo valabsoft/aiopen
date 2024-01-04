@@ -6,7 +6,13 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // Фиксируем размер окна
     setFixedSize(QSize(800, 500));
+
+    // Центрируем окно в пределах экрана
+    move(screen()->geometry().center() - frameGeometry().center());
+
 
     // Загрузка шрифта для заголовков
     QFont fontTitle("GOST type A", 20, QFont::Bold);
@@ -40,6 +46,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pbSettings->setIconSize(QSize(48, 48));
     ui->pbReport->setIcon(QIcon(":/images/png/bt-report.png"));
     ui->pbReport->setIconSize(QSize(48, 48));
+
+    ui->pbAbout->setIcon(QIcon(":/images/png/info-icon.png"));
+    ui->pbAbout->setIconSize(QSize(18, 18));
+    ui->pbChartZoom->setIcon(QIcon(":/images/png/binoculars-icon.png"));
+    ui->pbChartZoom->setIconSize(QSize(18, 18));
 
     // Иконка приложения
     setWindowIcon(QIcon(":/images/png/chemistry-icon.png"));
@@ -113,11 +124,18 @@ MainWindow::MainWindow(QWidget *parent)
     chart->legend()->setAlignment(Qt::AlignLeft);
 
 
-    ui->gvChart->setChart(chart);    
+    ui->gvChart->setChart(chart);
+
+    // About Dialog
+    aboutDlg = new DialogAbout(this);
+    // Chart Dialog
+    chartDlg = new DialogChart(this);
 }
 
 MainWindow::~MainWindow()
 {
+    delete aboutDlg;
+    delete chartDlg;
     delete ui;
 }
 
@@ -144,4 +162,17 @@ void MainWindow::on_pbStartStop_clicked()
         ui->pbStartStop->setText("СТОП");
     else
         ui->pbStartStop->setText("СТАРТ");}
+
+
+void MainWindow::on_pbAbout_clicked()
+{
+    aboutDlg->show();
+    aboutDlg->activateWindow();
+}
+
+void MainWindow::on_pbChartZoom_clicked()
+{
+    chartDlg->show();
+    chartDlg->activateWindow();
+}
 
