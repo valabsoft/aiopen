@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Загрузка шрифта для заголовков
     QFont fontTitle("GOST type A", 20, QFont::Bold);
-    QFont fontButton("GOST type A", 20, QFont::Normal);
+    QFont fontButton("GOST type A", 20, QFont::Bold);
     QFont fontSmall("GOST type B", 11, QFont::Normal);
 
     // Метки
@@ -55,18 +55,30 @@ MainWindow::MainWindow(QWidget *parent)
     // Иконка приложения
     setWindowIcon(QIcon(":/images/png/chemistry-icon.png"));
 
-    QStringListModel *model = new QStringListModel(this);
-    QStringList list;
-    list << "damage\t\t7";
-    list << "synchaeta\t\t22";
-    list << "copepoda\t\t16";
-    list << "filament\t\t5";
-    list << "nauplius\t\t23";
-    list << "bubble\t\t21";
-    list << "evadne\t\t5";
-    model->setStringList(list);
+    // Заполнение списка
+    //QStringListModel *model = new QStringListModel(this);
+    //QStringList list;
+    //list << "damage\t\t7";
+    //list << "synchaeta\t\t22";
+    //list << "copepoda\t\t16";
+    //list << "filament\t\t5";
+    //list << "nauplius\t\t23";
+    //list << "bubble\t\t21";
+    //list << "evadne\t\t5";
+    //model->setStringList(list);
+    //ui->lvSpecies->setModel(model);
+    //ui->lvSpecies->setFont(fontSmall);
+
+    QStandardItemModel *model = new QStandardItemModel(this);
     ui->lvSpecies->setModel(model);
     ui->lvSpecies->setFont(fontSmall);
+    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul01.png"), "damage\t\t7"));
+    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul02.png"), "synchaeta\t\t22"));
+    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul03.png"), "copepoda\t\t16"));
+    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul04.png"), "filament\t\t5"));
+    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul05.png"), "nauplius\t\t23"));
+    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul06.png"), "bubble\t\t21"));
+    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul07.png"), "evadne\t\t5"));
 
     // ========================================================================
     // https://stackoverflow.com/questions/48362864/how-to-insert-qchartview-in-form-with-qt-designer

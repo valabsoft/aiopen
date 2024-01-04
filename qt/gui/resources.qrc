@@ -9,5 +9,12 @@
         <file>png/ai.png</file>
         <file>png/info-icon.png</file>
         <file>png/binoculars-icon.png</file>
+        <file>bul/bul01.png</file>
+        <file>bul/bul02.png</file>
+        <file>bul/bul03.png</file>
+        <file>bul/bul04.png</file>
+        <file>bul/bul05.png</file>
+        <file>bul/bul06.png</file>
+        <file>bul/bul07.png</file>
     </qresource>
 </RCC>
