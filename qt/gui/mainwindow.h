@@ -11,6 +11,7 @@
 
 #include <dialogabout.h>
 #include <dialogchart.h>
+#include <dialogmorpho.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -37,6 +38,8 @@ private:
     Ui::MainWindow *ui;
     DialogAbout *aboutDlg;
     DialogChart *chartDlg;
+    DialogMorpho *morphoDlg;
     bool isStarted = false;
+    bool isMorpho = true;
 };
 #endif // MAINWINDOW_H

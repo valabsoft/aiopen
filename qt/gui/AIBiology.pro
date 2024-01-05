@@ -11,17 +11,20 @@ CONFIG += c++17
 SOURCES += \
     dialogabout.cpp \
     dialogchart.cpp \
+    dialogmorpho.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     dialogabout.h \
     dialogchart.h \
+    dialogmorpho.h \
     mainwindow.h
 
 FORMS += \
     dialogabout.ui \
     dialogchart.ui \
+    dialogmorpho.ui \
     mainwindow.ui
 
 # Default rules for deployment.

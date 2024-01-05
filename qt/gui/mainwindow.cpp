@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Загрузка шрифта для заголовков
     QFont fontTitle("GOST type A", 20, QFont::Bold);
-    QFont fontButton("GOST type A", 20, QFont::Bold);
+    QFont fontButton("GOST type A", 20, QFont::Normal);
     QFont fontSmall("GOST type B", 11, QFont::Normal);
 
     // Метки
@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Кнопки
     ui->pbSettings->setFont(fontButton);
     ui->pbReport->setFont(fontButton);
-    ui->pbStartStop->setFont(fontTitle);
+    ui->pbStartStop->setFont(fontButton);
 
     // Установка индикатора скорости потока
     ui->lcdFlow->setSmallDecimalPoint(true);
@@ -53,21 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pbChartZoom->setIconSize(QSize(18, 18));
 
     // Иконка приложения
-    setWindowIcon(QIcon(":/images/png/chemistry-icon.png"));
-
-    // Заполнение списка
-    //QStringListModel *model = new QStringListModel(this);
-    //QStringList list;
-    //list << "damage\t\t7";
-    //list << "synchaeta\t\t22";
-    //list << "copepoda\t\t16";
-    //list << "filament\t\t5";
-    //list << "nauplius\t\t23";
-    //list << "bubble\t\t21";
-    //list << "evadne\t\t5";
-    //model->setStringList(list);
-    //ui->lvSpecies->setModel(model);
-    //ui->lvSpecies->setFont(fontSmall);
+    setWindowIcon(QIcon(":/images/png/chemistry-icon.png"));    
 
     QStandardItemModel *model = new QStandardItemModel(this);
     ui->lvSpecies->setModel(model);
@@ -142,12 +128,15 @@ MainWindow::MainWindow(QWidget *parent)
     aboutDlg = new DialogAbout(this);
     // Chart Dialog
     chartDlg = new DialogChart(this);
+    // Morphological Dialog
+    morphoDlg = new DialogMorpho(this);
 }
 
 MainWindow::~MainWindow()
 {
     delete aboutDlg;
     delete chartDlg;
+    delete morphoDlg;
     delete ui;
 }
 
@@ -173,8 +162,15 @@ void MainWindow::on_pbStartStop_clicked()
     if (isStarted)
         ui->pbStartStop->setText("СТОП");
     else
-        ui->pbStartStop->setText("СТАРТ");}
-
+    {
+        ui->pbStartStop->setText("СТАРТ");
+        if (isMorpho)
+        {
+            morphoDlg->show();
+            morphoDlg->activateWindow();
+        }
+    }
+}
 
 void MainWindow::on_pbAbout_clicked()
 {
