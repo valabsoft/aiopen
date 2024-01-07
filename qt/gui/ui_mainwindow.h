@@ -58,8 +58,9 @@ public:
         gbSpecies->setGeometry(QRect(10, 10, 531, 481));
         lbSpecies = new QLabel(gbSpecies);
         lbSpecies->setObjectName(QString::fromUtf8("lbSpecies"));
-        lbSpecies->setGeometry(QRect(12, 15, 300, 470));
-        lbSpecies->setMinimumSize(QSize(300, 470));
+        lbSpecies->setGeometry(QRect(12, 15, 300, 455));
+        lbSpecies->setMinimumSize(QSize(300, 450));
+        lbSpecies->setPixmap(QPixmap(QString::fromUtf8(":/images/png/main.png")));
         lbSpecies->setAlignment(Qt::AlignCenter);
         lvSpecies = new QListView(gbSpecies);
         lvSpecies->setObjectName(QString::fromUtf8("lvSpecies"));
@@ -220,7 +221,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "AI Biology Processor 2.0", nullptr));
-        lbSpecies->setText(QCoreApplication::translate("MainWindow", "STREAM", nullptr));
+        lbSpecies->setText(QString());
         pbChartZoom->setText(QString());
         gbStreamControl->setTitle(QCoreApplication::translate("MainWindow", "\320\232\320\236\320\235\320\242\320\240\320\236\320\233\320\254 \320\237\320\236\320\242\320\236\320\232\320\220", nullptr));
         pbUp->setText(QCoreApplication::translate("MainWindow", "U", nullptr));
