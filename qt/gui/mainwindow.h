@@ -12,6 +12,7 @@
 #include <dialogabout.h>
 #include <dialogchart.h>
 #include <dialogmorpho.h>
+#include <dialogsettings.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -34,11 +35,14 @@ private slots:
     void on_pbAbout_clicked();
     void on_pbChartZoom_clicked();
 
+    void on_pbSettings_clicked();
+
 private:
     Ui::MainWindow *ui;
     DialogAbout *aboutDlg;
     DialogChart *chartDlg;
     DialogMorpho *morphoDlg;
+    DialogSettings *settingsDlg;
     bool isStarted = false;
     bool isMorpho = true;
 };

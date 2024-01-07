@@ -1,10 +1,12 @@
 release/dialogabout.o
 release/dialogchart.o
 release/dialogmorpho.o
+release/dialogsettings.o
 release/main.o
 release/mainwindow.o
 release/qrc_resources.o
 release/moc_dialogabout.o
 release/moc_dialogchart.o
 release/moc_dialogmorpho.o
+release/moc_dialogsettings.o
 release/moc_mainwindow.o

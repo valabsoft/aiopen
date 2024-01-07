@@ -2,6 +2,9 @@
 #include "qscreen.h"
 #include "ui_dialogmorpho.h"
 
+#include <filesystem>
+namespace fs = std::filesystem;
+
 DialogMorpho::DialogMorpho(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::DialogMorpho)
@@ -22,7 +25,11 @@ DialogMorpho::DialogMorpho(QWidget *parent)
     ui->lvImage->setIconSize(QSize(100, 100));
     ui->lvImage->setResizeMode(QListWidget::ResizeMode::Adjust);
 
-    QDir path("D:\\SourceCode\\aiopen\\images\\");
+    fs::path pathToSettings = fs::current_path() / "settings.ini";
+    QSettings settings (QString::fromStdString(pathToSettings.u8string()), QSettings::IniFormat);
+    settings.beginGroup("Settings");
+
+    QDir path(settings.value("PATH_TO_IMAGES").toString());
     QStringList images = path.entryList(
         QStringList() << "*.png" << "*.PNG",
         QDir::Files);

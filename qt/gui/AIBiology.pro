@@ -12,6 +12,7 @@ SOURCES += \
     dialogabout.cpp \
     dialogchart.cpp \
     dialogmorpho.cpp \
+    dialogsettings.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -19,12 +20,14 @@ HEADERS += \
     dialogabout.h \
     dialogchart.h \
     dialogmorpho.h \
+    dialogsettings.h \
     mainwindow.h
 
 FORMS += \
     dialogabout.ui \
     dialogchart.ui \
     dialogmorpho.ui \
+    dialogsettings.ui \
     mainwindow.ui
 
 # Default rules for deployment.

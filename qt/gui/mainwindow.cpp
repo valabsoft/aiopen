@@ -130,6 +130,8 @@ MainWindow::MainWindow(QWidget *parent)
     chartDlg = new DialogChart(this);
     // Morphological Dialog
     morphoDlg = new DialogMorpho(this);
+    // Settings Dialog
+    settingsDlg = new DialogSettings(this);
 }
 
 MainWindow::~MainWindow()
@@ -137,6 +139,8 @@ MainWindow::~MainWindow()
     delete aboutDlg;
     delete chartDlg;
     delete morphoDlg;
+    delete settingsDlg;
+
     delete ui;
 }
 
@@ -182,5 +186,12 @@ void MainWindow::on_pbChartZoom_clicked()
 {
     chartDlg->show();
     chartDlg->activateWindow();
+}
+
+
+void MainWindow::on_pbSettings_clicked()
+{
+    settingsDlg->show();
+    settingsDlg->activateWindow();
 }
 

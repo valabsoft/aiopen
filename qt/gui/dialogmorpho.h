@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QListWidgetItem>
 #include <QStringListModel>
+#include <QSettings>
 
 namespace Ui {
 class DialogMorpho;
