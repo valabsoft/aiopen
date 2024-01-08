@@ -31,7 +31,7 @@ DialogMorpho::DialogMorpho(QWidget *parent)
 
     QDir path(settings.value("PATH_TO_IMAGES").toString());
     QStringList images = path.entryList(
-        QStringList() << "*.png" << "*.PNG",
+        QStringList() << "*.png" << "*.jpg",
         QDir::Files);
     int ind;
     QString caption;

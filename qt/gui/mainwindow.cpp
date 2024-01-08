@@ -58,11 +58,11 @@ MainWindow::MainWindow(QWidget *parent)
     QStandardItemModel *model = new QStandardItemModel(this);
     ui->lvSpecies->setModel(model);
     ui->lvSpecies->setFont(fontSmall);
-    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul01.png"), "damage\t\t7"));
-    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul02.png"), "synchaeta\t\t22"));
-    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul03.png"), "copepoda\t\t16"));
+    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul01.png"), "nauplius\t\t23"));
+    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul02.png"), "copepoda\t\t16"));
+    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul03.png"), "synchaeta\t\t22"));
     model->appendRow(new QStandardItem(QIcon(":/images/bul/bul04.png"), "filament\t\t5"));
-    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul05.png"), "nauplius\t\t23"));
+    model->appendRow(new QStandardItem(QIcon(":/images/bul/bul05.png"), "damage\t\t7"));
     model->appendRow(new QStandardItem(QIcon(":/images/bul/bul06.png"), "bubble\t\t21"));
     model->appendRow(new QStandardItem(QIcon(":/images/bul/bul07.png"), "evadne\t\t5"));
 
@@ -72,30 +72,30 @@ MainWindow::MainWindow(QWidget *parent)
     // Chart
     // ========================================================================
 
-    auto setDamage = new QBarSet("Damage");
-    auto setSynchaeta = new QBarSet("Synchaeta");
-    auto setCopepoda = new QBarSet("Copepoda");
-    auto setFilament = new QBarSet("Filament");
     auto setNauplius = new QBarSet("Nauplius");
+    auto setCopepoda = new QBarSet("Copepoda");
+    auto setSynchaeta = new QBarSet("Synchaeta");
+    auto setFilament = new QBarSet("Filament");
+    auto setDamage = new QBarSet("Damage");
     auto setBubble = new QBarSet("Bubble");
     auto setEvadne = new QBarSet("Evadne");
 
-    // Заполняем данными
-    *setDamage << 7;
-    *setSynchaeta << 22;
-    *setCopepoda << 16;
-    *setFilament << 5;
+    // Заполняем данными    
     *setNauplius << 23;
+    *setCopepoda << 16;
+    *setSynchaeta << 22;
+    *setFilament << 5;
+    *setDamage << 7;
     *setBubble << 21;
     *setEvadne << 5;
 
     // auto series = new QHorizontalBarSeries;
     auto series = new QBarSeries();
-    series->append(setDamage);
-    series->append(setSynchaeta);
-    series->append(setCopepoda);
-    series->append(setFilament);
     series->append(setNauplius);
+    series->append(setCopepoda);
+    series->append(setSynchaeta);
+    series->append(setFilament);
+    series->append(setDamage);
     series->append(setBubble);
     series->append(setEvadne);
 

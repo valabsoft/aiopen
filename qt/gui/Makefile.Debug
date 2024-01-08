@@ -131,9 +131,11 @@ debug/qrc_resources.cpp: resources.qrc \
 		png/info-icon.png \
 		png/arrow-down.png \
 		png/ai.png \
+		png/2.jpg \
 		png/arrow-up.png \
 		png/main.png \
 		png/bt-report.png \
+		png/1.jpg \
 		png/bt-settings.png \
 		png/sevsu.png \
 		png/chemistry-icon.png \
@@ -1192,7 +1194,13 @@ debug/dialogabout.o: dialogabout.cpp dialogabout.h \
 		C:/Qt/6.3.2/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.3.2/mingw_64/include/QtWidgets/QPushButton \
 		C:/Qt/6.3.2/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.3.2/mingw_64/include/QtWidgets/qabstractbutton.h
+		C:/Qt/6.3.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.3.2/mingw_64/include/QtWidgets/QVBoxLayout \
+		C:/Qt/6.3.2/mingw_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/6.3.2/mingw_64/include/QtWidgets/qlayout.h \
+		C:/Qt/6.3.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/6.3.2/mingw_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/6.3.2/mingw_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\dialogabout.o dialogabout.cpp
 
 debug/dialogchart.o: dialogchart.cpp dialogchart.h \

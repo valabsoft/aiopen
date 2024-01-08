@@ -17,5 +17,7 @@
         <file>bul/bul06.png</file>
         <file>bul/bul07.png</file>
         <file>png/main.png</file>
+        <file>png/1.jpg</file>
+        <file>png/2.jpg</file>
     </qresource>
 </RCC>

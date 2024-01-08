@@ -20,30 +20,30 @@ DialogChart::DialogChart(QWidget *parent)
     // Chart
     // ========================================================================
 
-    auto setDamage = new QBarSet("Damage");
-    auto setSynchaeta = new QBarSet("Synchaeta");
-    auto setCopepoda = new QBarSet("Copepoda");
-    auto setFilament = new QBarSet("Filament");
     auto setNauplius = new QBarSet("Nauplius");
+    auto setCopepoda = new QBarSet("Copepoda");
+    auto setSynchaeta = new QBarSet("Synchaeta");
+    auto setFilament = new QBarSet("Filament");    
+    auto setDamage = new QBarSet("Damage");
     auto setBubble = new QBarSet("Bubble");
     auto setEvadne = new QBarSet("Evadne");
 
     // Заполняем данными
-    *setDamage << 7;
-    *setSynchaeta << 22;
-    *setCopepoda << 16;
-    *setFilament << 5;
     *setNauplius << 23;
+    *setCopepoda << 16;
+    *setSynchaeta << 22;
+    *setFilament << 5;
+    *setDamage << 7;
     *setBubble << 21;
     *setEvadne << 5;
 
     // auto series = new QHorizontalBarSeries;
     auto series = new QBarSeries();
-    series->append(setDamage);
-    series->append(setSynchaeta);
-    series->append(setCopepoda);
-    series->append(setFilament);
     series->append(setNauplius);
+    series->append(setCopepoda);
+    series->append(setSynchaeta);
+    series->append(setFilament);    
+    series->append(setDamage);
     series->append(setBubble);
     series->append(setEvadne);
 

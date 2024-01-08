@@ -60,7 +60,8 @@ public:
         lbSpecies->setObjectName(QString::fromUtf8("lbSpecies"));
         lbSpecies->setGeometry(QRect(12, 15, 300, 455));
         lbSpecies->setMinimumSize(QSize(300, 450));
-        lbSpecies->setPixmap(QPixmap(QString::fromUtf8(":/images/png/main.png")));
+        lbSpecies->setPixmap(QPixmap(QString::fromUtf8(":/images/png/1.jpg")));
+        lbSpecies->setScaledContents(true);
         lbSpecies->setAlignment(Qt::AlignCenter);
         lvSpecies = new QListView(gbSpecies);
         lvSpecies->setObjectName(QString::fromUtf8("lvSpecies"));
